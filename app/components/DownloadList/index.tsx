@@ -85,7 +85,7 @@ export function DownloadList (props: IDownloadListProps) {
       onVisibleChange={downloadListPanelVisibleChange}
     >
       <Badge count={downloadable}>
-        <Icon type="cloud-download" onClick={getDownloadList(props)} />
+        <Icon type="cloud-download" onClick={getDownloadList(props)} style={{color:'#c8a2b9'}} />
       </Badge>
     </Popover>
   )

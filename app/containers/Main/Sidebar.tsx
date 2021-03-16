@@ -45,27 +45,27 @@ const sidebarSource: Array<{
   permissionName: typeof SidebarPermissions[number]
 }> = [
   {
-    icon: <i className="iconfont icon-dashboard" />,
+    icon: <i className="iconfont icon-dashboard" > <div style={{fontSize:'10px',marginTop:'-42px'}}>数据展示</div></i>,
     routes: ['vizs'],
     permissionName: 'vizPermission'
   },
   {
-    icon: <i className="iconfont icon-widget-gallery" />,
+    icon: <i className="iconfont icon-widget-gallery" > <div style={{fontSize:'10px',marginTop:'-42px'}}>图表</div></i>,
     routes: ['widgets'],
     permissionName: 'widgetPermission'
   },
   {
-    icon: <i className="iconfont icon-custom-business" />,
+    icon: <i className="iconfont icon-custom-business" > <div style={{fontSize:'10px',marginTop:'-42px'}}>数据集</div></i>,
     routes: ['views'],
     permissionName: 'viewPermission'
   },
   {
-    icon: <i className="iconfont icon-datasource24" />,
+    icon: <i className="iconfont icon-datasource24" > <div style={{fontSize:'10px',marginTop:'-42px'}}>数据库</div></i>,
     routes: ['sources'],
     permissionName: 'sourcePermission'
   },
   {
-    icon: <Icon type="clock-circle" />,
+    icon: <i> <Icon type="clock-circle" /> <div style={{fontSize:'10px',marginTop:'-42px',fontStyle:'normal'}}>调度器</div> </i>,
     routes: ['schedules'],
     permissionName: 'schedulePermission'
   }

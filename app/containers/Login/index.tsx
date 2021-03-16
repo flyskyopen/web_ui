@@ -137,13 +137,13 @@ export class Login extends React.PureComponent<
           onLogin={this.doLogin}
         />
         <p className={styles.tips}>
-          <a
+          {/* <a
             href="javascript:;"
             className={styles.register}
             onClick={this.toSignUp}
           >
             注册新账户
-          </a>
+          </a> */}
           <a
             href="javascript:;"
             className={styles.forgetPassword}

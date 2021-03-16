@@ -19,7 +19,7 @@
  */
 
 import React, { useMemo, FC } from 'react'
-import Canvas from './Canvas'
+// import Canvas from './Canvas'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Login from 'containers/Login'
@@ -42,8 +42,8 @@ export const Background: FC = () => {
           </span>
         ) : (
           <>
-            <b>版本： </b>
-            <span>{version}</span>
+            {/* <b>版本： </b>
+            <span>{version}</span> */}
           </>
         )}
       </p>
@@ -52,14 +52,14 @@ export const Background: FC = () => {
 
   return (
     <div className={styles.container}>
-      <Canvas />
-      <img
+      {/* <Canvas /> */}
+      {/* <img
         className={styles.logo}
         src={require('assets/images/logo_light.svg')}
-      />
+      /> */}
       <Switch>
         <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
+        {/* <Route path="/register" component={Register} /> */}
         <Route path="/joinOrganization" component={JoinOrganization} />
         <Redirect to="/login" />
       </Switch>

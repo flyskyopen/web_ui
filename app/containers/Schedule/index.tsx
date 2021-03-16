@@ -294,7 +294,7 @@ const ScheduleList: React.FC<ScheduleListProps> = (props) => {
           <Col span={24}>
             <Breadcrumb className={utilStyles.breadcrumb}>
               <Breadcrumb.Item>
-                <Link to="">Schedule</Link>
+                <Link to="">调度器管理</Link>
               </Breadcrumb.Item>
             </Breadcrumb>
           </Col>
@@ -305,7 +305,7 @@ const ScheduleList: React.FC<ScheduleListProps> = (props) => {
           <Box.Header>
             <Box.Title>
               <Icon type="bars" />
-              Schedule List
+              调度器列表
             </Box.Title>
             <Box.Tools>
               <Tooltip placement="bottom" title="新增">

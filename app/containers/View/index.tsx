@@ -153,7 +153,7 @@ export class ViewList extends React.PureComponent<IViewListProps, IViewListState
       title: '描述',
       dataIndex: 'description'
     }, {
-      title: 'Source',
+      title: '数据库',
       dataIndex: 'sourceName',
       filterMultiple: false,
       onFilter: (val, record) => record.sourceName === val,
@@ -245,7 +245,7 @@ export class ViewList extends React.PureComponent<IViewListProps, IViewListState
       this.setState({
         copyModalVisible: false
       })
-      message.info('View 复制成功')
+      message.info('数据集 复制成功')
     })
   }
 
@@ -292,7 +292,7 @@ export class ViewList extends React.PureComponent<IViewListProps, IViewListState
               <Col span={24}>
                 <Breadcrumb className={utilStyles.breadcrumb}>
                   <Breadcrumb.Item>
-                    <Link to="">View</Link>
+                    <Link to="">数据集管理</Link>
                   </Breadcrumb.Item>
                 </Breadcrumb>
               </Col>
@@ -303,7 +303,7 @@ export class ViewList extends React.PureComponent<IViewListProps, IViewListState
               <Box.Header>
                 <Box.Title>
                   <Icon type="bars" />
-                  View List
+                  数据集列表
                 </Box.Title>
                 <Box.Tools>
                   <Tooltip placement="bottom" title="新增">

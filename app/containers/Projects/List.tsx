@@ -40,7 +40,8 @@ import {
   makeSelectProjects,
   makeSelectSearchProject,
   makeSelectStarUserList,
-  makeSelectCollectProjects
+  makeSelectCollectProjects,
+  makeSelectLogs
 } from './selectors'
 import { ProjectActions } from './actions'
 import injectReducer from 'utils/injectReducer'
@@ -67,12 +68,14 @@ import {
   projectType,
   IProjectType,
   IToolbarProps,
-  projectTypeSmall
+  projectTypeSmall,
+  ILog
 } from './types'
 import { FormComponentProps } from 'antd/lib/form/Form'
 import { uuid } from 'app/utils/util'
 import { useResize } from './hooks/useResize'
 import ProjectItem from './component/ProjectItem'
+import Log from './Log'
 
 function enhanceInput(props, ref) {
   const inputRef = useRef(null)
@@ -82,6 +85,7 @@ function enhanceInput(props, ref) {
 }
 
 const EnhanceInput = React.forwardRef(enhanceInput)
+
 
 const Toolbar: React.FC<IToolbarProps> = React.memo(
   ({ pType, setPType, setKeywords, searchKeywords, showProForm }) => {
@@ -168,6 +172,7 @@ const Projects: React.FC<
   ({
     projects,
     onLoadProjects,
+    onloadLogs,
     onLoadOrganizations,
     organizations,
     loginUser,
@@ -218,6 +223,9 @@ const Projects: React.FC<
     useEffect(() => {
       if (onLoadProjects) {
         onLoadProjects()
+      }
+      if (onloadLogs) {
+        onloadLogs()
       }
       if (onLoadOrganizations) {
         onLoadOrganizations()
@@ -640,6 +648,9 @@ const Projects: React.FC<
           searchKeywords={searchKeywords}
           setFormVisible={checkoutFormVisible}
         />
+
+      {/* <Log /> */}
+
         <div className={styles.content}>
           {projects ? (
             projects.length > 0 ? (
@@ -686,6 +697,7 @@ const Projects: React.FC<
 
 const mapStateToProps = createStructuredSelector({
   projects: makeSelectProjects(),
+  logs:makeSelectLogs(),
   loginUser: makeSelectLoginUser(),
   starUserList: makeSelectStarUserList(),
   organizations: makeSelectOrganizations(),
@@ -696,6 +708,7 @@ const mapStateToProps = createStructuredSelector({
 export function mapDispatchToProps(dispatch) {
   return {
     onLoadProjects: () => dispatch(ProjectActions.loadProjects()),
+    onLoadLogs: () => dispatch(ProjectActions.loadLogs()),
     onSearchProject: (param) => dispatch(ProjectActions.searchProject(param)),
     onLoadProjectDetail: (id) => dispatch(ProjectActions.loadProjectDetail(id)),
     onLoadCollectProjects: () => dispatch(ProjectActions.loadCollectProjects()),

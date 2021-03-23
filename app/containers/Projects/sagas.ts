@@ -37,6 +37,7 @@ export function* getProjects (action: ProjectActionType) {
   const { projectsLoaded, loadProjectsFail } = ProjectActions
   try {
     const asyncData = yield call(request, api.projects)
+    // console.log(asyncData)
     const projects = asyncData.payload
     yield put(projectsLoaded(projects))
   } catch (err) {
@@ -44,6 +45,28 @@ export function* getProjects (action: ProjectActionType) {
     errorHandler(err)
   }
 }
+
+export function* getLogs (action: ProjectActionType) {
+  console.log(333333333333333333)
+  if (action.type !== ActionTypes.LOAD_LOG) { return }
+
+  const { logLoader, loadLogsFail } = ProjectActions
+  try {
+    // const asyncData = yield call(request, api.log)
+    const asyncData = yield call(request, {
+      method: 'get',
+      url: `${api.log}`
+    })
+    const result = asyncData.payload
+    yield put(logLoader(result))
+    localStorage.setItem('logsInfo', JSON.stringify(result))
+  } catch (err) {
+    yield put(loadLogsFail())
+    errorHandler(err)
+  }
+}
+
+
 
 export function* addProject (action: ProjectActionType) {
   if (action.type !== ActionTypes.ADD_PROJECT) { return }
@@ -165,6 +188,7 @@ export function* addProjectRole (action: ProjectActionType) {
   }
 }
 
+// http://localhost:5002/#/project/4  登录后项目点进去明细
 export function* getProjectDetail (action: ProjectActionType) {
   if (action.type !== ActionTypes.LOAD_PROJECT_DETAIL) { return }
 
@@ -399,6 +423,7 @@ export function* excludeRole (action: ProjectActionType) {
 export default function* rootProjectSaga () {
   yield all([
     takeLatest(ActionTypes.LOAD_PROJECTS, getProjects),
+    takeLatest(ActionTypes.LOAD_LOG, getLogs),
     takeLatest(ActionTypes.ADD_PROJECT_ROLE, addProjectRole),
     takeEvery(ActionTypes.ADD_PROJECT, addProject),
     takeEvery(ActionTypes.EDIT_PROJECT, editProject),

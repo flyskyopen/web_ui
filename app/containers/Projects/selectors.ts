@@ -19,7 +19,7 @@
  */
 
 import { createSelector } from 'reselect'
-import { IProjectState } from './types'
+import {  IProjectState } from './types'
 import { initialState } from './reducer'
 
 const selectProject = (state) => state.project || initialState
@@ -27,6 +27,11 @@ const selectProject = (state) => state.project || initialState
 const makeSelectProjects = () => createSelector(
   selectProject,
   (projectState: IProjectState) => projectState.projects
+)
+
+const makeSelectLogs = () => createSelector(
+  selectProject,
+  (projectState: IProjectState) => projectState.logs
 )
 
 const makeSelectCurrentProject = () => createSelector(
@@ -61,6 +66,7 @@ const makeSelectProjectRoles = () => createSelector(
 
 export {
   selectProject,
+  makeSelectLogs,
   makeSelectProjects,
   makeSelectSearchProject,
   makeSelectCurrentProject,

@@ -1,0 +1,44 @@
+{
+  "id": "2428040",
+  "name": "log01",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3898927",
+      "name": "时间",
+      "font_class": "shijian",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "1105853",
+      "name": "部门",
+      "font_class": "bumen",
+      "unicode": "e6df",
+      "unicode_decimal": 59103
+    },
+    {
+      "icon_id": "2237670",
+      "name": "下载",
+      "font_class": "xiazai",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "4488839",
+      "name": "姓名",
+      "font_class": "xingming",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "19494304",
+      "name": "登录 单色",
+      "font_class": "dengludanse",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    }
+  ]
+}

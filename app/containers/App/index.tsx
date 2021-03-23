@@ -52,6 +52,7 @@ export class App extends React.PureComponent<AppProps> {
   constructor (props: AppProps) {
     super(props)
     props.onGetServerConfigurations()
+    // console.log(props,333333333333333)
     this.checkTokenLink()
   }
 

@@ -96,7 +96,11 @@ enum Types {
 
   EXCLUDE_ROLES = 'davinci/Project/EXCLUDE_ROLES',
   EXCLUDE_ROLES_SUCCESS = 'davinci/Project/EXCLUDE_ROLES_SUCCESS',
-  EXCLUDE_ROLES_FAIL = 'davinci/Project/EXCLUDE_ROLES_FAIL'
+  EXCLUDE_ROLES_FAIL = 'davinci/Project/EXCLUDE_ROLES_FAIL',
+
+  LOAD_LOG = 'davinci/Project/LOAD_LOG',
+  LOAD_LOG_SUCCESS = 'davinci/Project/LOAD_LOG_SUCCESS',
+  LOAD_LOG_FAILURE = 'davinci/Project/LOAD_LOG_FAILURE',
 }
 
 export const ActionTypes = createTypes(Types)

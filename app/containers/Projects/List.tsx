@@ -649,7 +649,7 @@ const Projects: React.FC<
           setFormVisible={checkoutFormVisible}
         />
 
-      {/* <Log /> */}
+      <Log />
 
         <div className={styles.content}>
           {projects ? (
@@ -697,7 +697,7 @@ const Projects: React.FC<
 
 const mapStateToProps = createStructuredSelector({
   projects: makeSelectProjects(),
-  logs:makeSelectLogs(),
+  // logs:makeSelectLogs(),
   loginUser: makeSelectLoginUser(),
   starUserList: makeSelectStarUserList(),
   organizations: makeSelectOrganizations(),
@@ -708,7 +708,7 @@ const mapStateToProps = createStructuredSelector({
 export function mapDispatchToProps(dispatch) {
   return {
     onLoadProjects: () => dispatch(ProjectActions.loadProjects()),
-    onLoadLogs: () => dispatch(ProjectActions.loadLogs()),
+    onloadLogs: () => dispatch(ProjectActions.loadLogs()),
     onSearchProject: (param) => dispatch(ProjectActions.searchProject(param)),
     onLoadProjectDetail: (id) => dispatch(ProjectActions.loadProjectDetail(id)),
     onLoadCollectProjects: () => dispatch(ProjectActions.loadCollectProjects()),

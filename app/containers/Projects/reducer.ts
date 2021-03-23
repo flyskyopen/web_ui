@@ -35,7 +35,8 @@ export const initialState: IProjectState = {
   starUserList: null,
   collectProjects: null,
   currentProjectRole: null,
-  projectRoles: null
+  projectRoles: null,
+  logs:null
 }
 
 const projectReducer = (
@@ -50,6 +51,15 @@ const projectReducer = (
 
       case ActionTypes.LOAD_PROJECTS_FAILURE:
         break
+
+
+        case ActionTypes.LOAD_LOG_SUCCESS:
+          draft.logs = action.payload.result
+          break
+  
+        case ActionTypes.LOAD_LOG_FAILURE:
+          break
+
 
       case ActionTypes.RELATION_ROLE_PROJECT_LOADED:
         draft.currentProjectRole = action.payload.result

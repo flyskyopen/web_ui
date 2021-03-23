@@ -60,6 +60,26 @@ export const ProjectActions = {
     }
   },
 
+  loadLogs () {
+    return {
+      type: ActionTypes.LOAD_LOG
+    }
+  },
+
+  logLoader (result) {
+    return {
+      type: ActionTypes.LOAD_LOG_SUCCESS,
+      payload: {
+        result
+      }
+    }
+  },
+  loadLogsFail () {
+    return {
+      type: ActionTypes.LOAD_LOG_FAILURE
+    }
+  },
+
   addProject (project, resolve) {
     return {
       type: ActionTypes.ADD_PROJECT,

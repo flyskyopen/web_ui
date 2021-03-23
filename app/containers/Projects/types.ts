@@ -47,6 +47,17 @@ export interface IProject {
   starNum?: number
 }
 
+export interface ILog {
+  sumTime?: string
+  vistNum?: string
+  userName?: string
+  department?: string
+  downNum?: string
+  loginNum?: string
+  // logsInfo : any
+}
+
+
 export interface IStarUser {
   avatar: string
   id: number
@@ -74,6 +85,7 @@ export interface IProjectState {
   collectProjects: IProject[]
   currentProjectRole: IProjectRolePermission
   projectRoles: IProjectRole[]
+  logs:ILog[]
 }
 
 export interface IProjectFormFieldProps {
@@ -105,8 +117,14 @@ export interface IEnhanceButtonProps {
   type?: string
 }
 
+export interface ILogsProps {
+  logs:ILog[]
+  onloadLogs:()=> any
+}
+
 export interface IProjectsProps {
   projects: IProject[]
+  logs:ILog[]
   collectProjects: IProject[]
   loginUser: any
   searchProject?: {
@@ -120,6 +138,7 @@ export interface IProjectsProps {
   onTransferProject: (id: number, orgId: number) => any
   onEditProject: (project: any, resolve: () => any) => any
   onLoadProjects: () => any
+  onloadLogs: () => any
   onAddProject: (project: any, resolve: () => any) => any
   onLoadOrganizations: () => any
   onLoadCollectProjects: () => any

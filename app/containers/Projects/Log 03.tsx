@@ -16,6 +16,8 @@ export class Logs extends React.Component<ILog> {
   }
 
   render() {
+  
+
     return (
 
       <div className={styles.log}>

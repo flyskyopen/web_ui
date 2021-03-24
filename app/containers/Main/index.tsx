@@ -140,6 +140,7 @@ export class Main extends React.Component<IMainProps, {}> {
                       path="/project/:projectId/schedule/:scheduleId?"
                       component={ScheduleEditor}
                     />
+                    
                     <Sidebar>
                       <Switch>
                         <AuthorizedRoute
@@ -168,6 +169,13 @@ export class Main extends React.Component<IMainProps, {}> {
                           path="/project/:projectId/schedules"
                           component={Schedule}
                         />
+
+                        <AuthorizedRoute
+                          permission="zizhuPermission"
+                          path="/project/:projectId/zizhu"
+                          component={Schedule}
+                        />
+
                       </Switch>
                     </Sidebar>
                   </Switch>

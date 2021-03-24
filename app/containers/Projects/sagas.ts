@@ -47,7 +47,6 @@ export function* getProjects (action: ProjectActionType) {
 }
 
 export function* getLogs (action: ProjectActionType) {
-  console.log(333333333333333333)
   if (action.type !== ActionTypes.LOAD_LOG) { return }
 
   const { logLoader, loadLogsFail } = ProjectActions

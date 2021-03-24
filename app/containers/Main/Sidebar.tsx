@@ -68,6 +68,11 @@ const sidebarSource: Array<{
     icon: <i> <Icon type="clock-circle" /> <div style={{fontSize:'10px',marginTop:'-42px',fontStyle:'normal'}}>调度器</div> </i>,
     routes: ['schedules'],
     permissionName: 'schedulePermission'
+  },
+  {
+    icon: <i> <i className="iconfont icon-custom-business" /> <div style={{fontSize:'10px',marginTop:'-42px',fontStyle:'normal'}}>自助取数</div> </i>,
+    routes: ['zizhu'],
+    permissionName: 'schedulePermission'
   }
 ]
 

@@ -18,6 +18,8 @@ export class Logs extends React.Component<ILog> {
   }
 
   render() {
+    // console.log(this.props['logs'],222)
+    // console.log(this.props['logs']['0'].lastoperation,333)
     return (
 
       <div className={styles.log}>

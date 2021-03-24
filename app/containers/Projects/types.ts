@@ -27,6 +27,7 @@ export interface IProjectPermission {
   viewPermission: number
   vizPermission: number
   widgetPermission: number
+  zizhuPermission:number
 }
 
 export interface IProject {
@@ -54,7 +55,14 @@ export interface ILog {
   department?: string
   downNum?: string
   loginNum?: string
-  // logsInfo : any
+  lastoperation?: {
+    action: string
+    date: string
+    name: string
+    subVizName: string
+    team:string
+    time:string
+  }
 }
 
 

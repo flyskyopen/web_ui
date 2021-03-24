@@ -76,6 +76,9 @@ import { uuid } from 'app/utils/util'
 import { useResize } from './hooks/useResize'
 import ProjectItem from './component/ProjectItem'
 import Log from './Log'
+import LastNewAction from './LastNewAction'
+
+
 
 function enhanceInput(props, ref) {
   const inputRef = useRef(null)
@@ -639,6 +642,10 @@ const Projects: React.FC<
     ])
 
     return (
+      <div>
+              
+
+      
       <div className={styles.wrapper}>
         <Toolbar
           pType={projectType}
@@ -649,7 +656,23 @@ const Projects: React.FC<
           setFormVisible={checkoutFormVisible}
         />
 
+        <div >
+
+
+
+
+
+      {/* <div style={{float:'left'}}>  */}
       <Log />
+      {/* </div> */}
+      <div className={styles.lna}
+      >
+        
+      <LastNewAction />
+
+      </div>
+
+     
 
         <div className={styles.content}>
           {projects ? (
@@ -664,6 +687,9 @@ const Projects: React.FC<
             ''
           )}
         </div>
+        </div>
+
+
         <Modal
           title={null}
           footer={null}
@@ -690,6 +716,10 @@ const Projects: React.FC<
           starUser={starUserList}
           closeUserListModal={onCloseStarModal}
         />
+      </div>
+      
+      
+      
       </div>
     )
   }

@@ -25,5 +25,6 @@ export const SidebarPermissions: Array<keyof IProjectPermission> = [
   'widgetPermission',
   'viewPermission',
   'sourcePermission',
-  'schedulePermission'
+  'schedulePermission',
+  'zizhuPermission'
 ]
